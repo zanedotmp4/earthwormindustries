@@ -3,7 +3,7 @@ from App.database import db
 class Crop(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   name =db.Column(db.String(255), nullable =False)
-  price = db.Column(db.Double nullable = False)
+  price = db.Column(db.Integer,nullable = False)
   quantity =db.Column(db.Integer, nullable = False)
   status = db.Column(db.String(80),nullable=False)
 

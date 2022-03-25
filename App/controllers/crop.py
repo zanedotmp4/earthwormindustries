@@ -1,4 +1,4 @@
-from App.models import Crop
+from App.models import crops
 from App.database import db
 
 def get_all_crops():
