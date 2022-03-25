@@ -6,7 +6,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username =  db.Column(db.String, nullable=False)
     password = db.Column(db.String(120), nullable=False)
-  listings = db.relationship('Listing', secondary=tags, lazy='subquery',
+    listings = db.relationship('Listing', secondary=tags, lazy='subquery',
         backref=db.backref('pages', lazy=True))
     def __init__(self, username, password):
         self.username = username
