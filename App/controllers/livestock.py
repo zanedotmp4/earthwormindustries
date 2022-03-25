@@ -1,4 +1,4 @@
-from App.models import Livestock
+from App.models import livestock
 from App.database import db
 
 def get_all_livestock():
