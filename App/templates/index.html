@@ -1,10 +1,44 @@
 {% extends "layout.html" %}
 {% block title %}KentuckyFarmControl{% endblock %}
-{% block page %}KentuckyFarmControl{% endblock %}
+{% block page %}<img class="z-index-5 nav-img" src="{{ url_for('static', filename='worm_green_trans.png') }}" height="50px" width="70px" alt="EarthWorm Inc. Logo">{% endblock %}
 
 {{ super() }}
 
 {% block content %}
-    <h1>Flask MVC</h1>
-    <p>This is a boileplate flask application which follows the MVC pattern for structuring the project.</p>
+    <div class="row s-container">
+        <div class="col l5 s12">
+            <br>
+            <br>
+            <h1 class="white-text cbold">Explore <br> KentuckyFarmControl</h1>
+            <p class="cusYellow">We're the ones who bit that piece out of Apple</p>
+            <br>
+            <button class="btn navcol">Get Started</button>
+        </div>
+        <div class="col l4 offset-l2 s12">
+            <img src="{{ url_for('static', filename='img_1.png') }}" height="500px" width="550px" alt="">
+        </div>
+    </div>
+    <div class="altbackcol uncontainer">
+        <div class="container">
+           <div class="row">
+               <div class="col l4 s12">
+                   <p>Image</p>
+               </div>
+               <div class="col l5 offset-l2 s12">
+                   <h2>How We Work</h2>
+                   <p>Lorem Ipsum</p>
+               </div>
+           </div>
+        </div>
+    </div>
+    <div>
+        <h1>Flask MVC</h1>
+        <p>This is a boileplate flask application which follows the MVC pattern for structuring the project.</p>
+    </div>
+    <div class="altbackcol uncontainer">
+        <div class="container">
+            <h1>Flask MVC</h1>
+            <p>This is a boileplate flask application which follows the MVC pattern for structuring the project.</p>
+        </div>
+    </div>
 {% endblock %}

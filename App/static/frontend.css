@@ -1,0 +1,93 @@
+/* Fonts */
+
+@font-face {
+    font-family: Chivo-Bold;
+    src: url(Chivo-Bold.woff);
+}
+
+@font-face {
+    font-family: Chivo-Regular;
+    src: url(Chivo-Regular.woff);
+}
+
+@font-face {
+    font-family: EncodeSans-Bold;
+    src: url(EncodeSans-Bold.ttf);
+}
+
+.creg {
+    font-family: "Chivo-Regular";
+}
+
+.cbold {
+    font-family: "Chivo-Bold";
+}
+
+.enbold {
+    font-family: "EncodeSans-Bold";
+}
+
+/* Navigation */ 
+
+.navcol {
+    background-color: #FFC703;
+  }
+
+.navtext {
+    color: #023831;
+    font-family: "Chivo-Bold";
+}
+
+.navi {
+    margin-left: 15px;
+}
+
+.navbtn {
+    background-color: #023831;
+    margin-right: 2vw;
+    border-radius: 5px;
+}
+
+.navtext-active {
+    color: white;
+}
+
+.nav-img {
+    margin-top: 10px;
+}
+
+/* Content Formatting */
+
+.backcol {
+    background-color: #023831;
+}
+
+.altbackcol {
+    background-color: #011d19;
+}
+
+.uncontainer {
+    margin-left: -231px;
+    margin-right: -227px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.s-container {
+    margin-left: -200px;
+    margin-right: -200px;
+}
+
+/* Colors */
+
+.cusYellow {
+    color: #FFC703;
+}
+
+.cusGreen {
+    color: #023831;
+}
+
+.cusDarkGreen {
+    color: #011d19;
+}
