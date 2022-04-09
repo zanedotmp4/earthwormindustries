@@ -5,17 +5,22 @@
 {{ super() }}
 
 {% block content %}
-    <div class="row s-container">
+    <div class="row">
         <div class="col l5 s12">
-            <br>
-            <br>
-            <h1 class="white-text cbold">Explore <br> KentuckyFarmControl</h1>
-            <p class="cusYellow">We're the ones who bit that piece out of Apple</p>
-            <br>
-            <button class="btn navcol">Get Started</button>
+            <div class="l-container">
+                <br>
+                <br>
+                <img class="img2" src="{{ url_for('static', filename='img_2.png') }}" height="100" width="100" alt="">
+                <h1 class="white-text cbold">Explore <br> KentuckyFarmControl</h1>
+                <p class="cusYellow">We're the ones who bit that piece out of Apple</p>
+                <br>
+                <button class="btn navcol">Get Started</button>
+            </div>
         </div>
         <div class="col l4 offset-l2 s12">
-            <img src="{{ url_for('static', filename='img_1.png') }}" height="500px" width="550px" alt="">
+            <div class="r-container img1">
+                <img src="{{ url_for('static', filename='img_1.png') }}" height="400px" width="625px" alt="">
+            </div>
         </div>
     </div>
     <div class="altbackcol uncontainer">

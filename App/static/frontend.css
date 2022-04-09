@@ -42,7 +42,7 @@
     margin-left: 15px;
 }
 
-.navbtn {
+.nav-btn {
     background-color: #023831;
     margin-right: 2vw;
     border-radius: 5px;
@@ -73,9 +73,21 @@
     margin-bottom: 20px;
 }
 
-.s-container {
-    margin-left: -200px;
-    margin-right: -200px;
+.l-container {
+    margin-left: -158px;
+}
+
+.r-container {
+    margin-right: -227px;
+}
+
+.img1 {
+    margin-top: 116px;
+}
+
+.img2 {
+    margin-top: 50px;
+    margin-bottom: -30px;
 }
 
 /* Colors */
