@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from flask_login import LoginManager, current_user
 from flask_uploads import DOCUMENTS, IMAGES, TEXT, UploadSet, configure_uploads
+from flask_jwt import JWT, jwt_required, current_identity
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
@@ -60,6 +61,36 @@ def create_app(config={}):
     
 app = create_app()
 migrate = get_migrate(app)
+
+
 @app.route('/')
 def index():
     return render_template('layout.html')
+
+@app.route('/singup',methods=['POST'])
+def signnup():
+    userdata = request.get_json() # get userdata
+    newuser = User(username=userdata['username'], email=userdata['email']) # create user object
+    newuser.set_password(userdata['password']) # set password
+    try:
+        db.session.add(newuser)
+        db.session.commit() # save user
+    except IntegrityError: # attempted to insert a duplicate user
+        db.session.rollback()
+        return 'username already exists' # error message
+    return 'user created' # success
+
+@app.route('/createtask', methods=['POST'])
+@jwt_required()
+def create_todo():
+  data = request.get_json()
+  db.session.add()
+  db.session.commit()
+  return json.dumps(todo.id), 201
+
+@app.route('/alltasks', methods=['GET'])
+@jwt_required()
+def get_task():
+  task = Todo.query.filter_by(userid=current_identity.id).all()
+  task = [todo.toDict() for todo in todos] # list comprehension which converts todo objects to dictionaries
+  return json.dumps(task)
