@@ -90,6 +90,19 @@
     margin-bottom: -30px;
 }
 
+/* Custom */
+
+.c-circle {
+    border-radius: 50%;
+    border: 5px solid #FFF;
+}
+
+/* Footer Content */
+
+.footer-r {
+    margin-right: -200px;
+}
+
 /* Colors */
 
 .cusYellow {
