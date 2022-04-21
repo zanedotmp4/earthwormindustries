@@ -62,14 +62,17 @@ def create_app(config={}):
 app = create_app()
 migrate = get_migrate(app)
 
-
-@app.route('/')
+@app.route('/home')
 def index():
     return render_template('layout.html')
 
-@app.route('/login/')
+@app.route('/login')
 def login():
     return render_template('login.html')
+
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
 
 @app.route('/signup',methods=['POST'])
 def signnup():
