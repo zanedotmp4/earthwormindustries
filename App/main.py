@@ -80,19 +80,36 @@ def signnup():
         return 'username already exists' # error message
     return 'user created' # success
 
-@app.route('/createtask', methods=['POST'])
+@app.route('/creatething<id>', methods=['POST'])
 @jwt_required()
-def create_todo():
-  data = request.get_json()
-  db.session.add()
-  db.session.commit()
-  return json.dumps(todo.id), 201
+def create_todo(id):
+    data = request.get_json()
+    if id == 1:
+      #create livestock
+       newls = create_livestock(data['name'],data['quantity'],data['price'])
+       db.session.add(newls)
+       db.session.commit()
+       return render_template('layout.html')
+    if id == 2:
+        #create crop
+         crop = create_crop(data['name'],data['quantiity'],data['price'])
+         db.session.add(crop)
+         db.session.commit()
+         return render_template('layout.html')
+    if id == 3:
+        #create chemicals
+        new_chem = create_chemical(data['name'],data['quantiity'],data['npk1'],data['npk2'],data['npk3'])
+        db.session.add(new_chem)
+        db.session.commit()
+        return render_template('layout.html')
 
-@app.route('/alltasks', methods=['GET'])
+    
+#id in this case would be if the thing is a livestock, crop or chemcial 
+@app.route('/allthings', methods=['GET'])
 @jwt_required()
 def get_task():
   tasks = User.query.filter_by(userid=current_identity.id).all()
-  tasks = [User.toDict() for task in tasks] # list comprehension which converts todo objects to dictionaries
+  tasks = [User.toDict() for task in tasks]
   return json.dumps(tasks)
 
 
