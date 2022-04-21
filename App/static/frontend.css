@@ -1,32 +1,3 @@
-/* Fonts */
-
-@font-face {
-    font-family: Chivo-Bold;
-    src: url(Chivo-Bold.woff);
-}
-
-@font-face {
-    font-family: Chivo-Regular;
-    src: url(Chivo-Regular.woff);
-}
-
-@font-face {
-    font-family: EncodeSans-Bold;
-    src: url(EncodeSans-Bold.ttf);
-}
-
-.creg {
-    font-family: "Chivo-Regular";
-}
-
-.cbold {
-    font-family: "Chivo-Bold";
-}
-
-.enbold {
-    font-family: "EncodeSans-Bold";
-}
-
 /* Navigation */ 
 
 .navcol {
@@ -105,18 +76,4 @@
 
 .footer-r {
     margin-right: -200px;
-}
-
-/* Colors */
-
-.cusYellow {
-    color: #FFC703;
-}
-
-.cusGreen {
-    color: #023831;
-}
-
-.cusDarkGreen {
-    color: #011d19;
 }

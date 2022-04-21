@@ -1,0 +1,42 @@
+/* Colors */
+
+.cusYellow {
+    color: #FFC703;
+}
+
+.cusGreen {
+    color: #023831;
+}
+
+.cusDarkGreen {
+    color: #011d19;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: Chivo-Bold;
+    src: url(fonts/Chivo-Bold.woff);
+}
+
+@font-face {
+    font-family: Chivo-Regular;
+    src: url(fonts/Chivo-Regular.woff);
+}
+
+@font-face {
+    font-family: EncodeSans-Bold;
+    src: url(fonts/EncodeSans-Bold.ttf);
+}
+
+.creg {
+    font-family: "Chivo-Regular";
+}
+
+.cbold {
+    font-family: "Chivo-Bold";
+}
+
+.enbold {
+    font-family: "EncodeSans-Bold";
+}
