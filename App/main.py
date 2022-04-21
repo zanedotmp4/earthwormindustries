@@ -91,8 +91,9 @@ def create_todo():
 @app.route('/alltasks', methods=['GET'])
 @jwt_required()
 def get_task():
-  task = Todo.query.filter_by(userid=current_identity.id).all()
-  task = [todo.toDict() for todo in todos] # list comprehension which converts todo objects to dictionaries
-  return json.dumps(task)
+  tasks = User.query.filter_by(userid=current_identity.id).all()
+  tasks = [User.toDict() for task in tasks] # list comprehension which converts todo objects to dictionaries
+  return json.dumps(tasks)
+
 
 # rember to add update and delete for tasks or crops idk what to call it also we gotta have a distintion for plants and crops
