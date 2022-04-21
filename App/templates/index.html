@@ -8,21 +8,28 @@
     <div class="row">
         <div class="col l5 s12">
             <div class="l-container">
-                <br>
-                <br>
-                <img class="img2" src="{{ url_for('static', filename='imgs/img_2.png') }}" height="100" width="100" alt="">
+                <br style="margin-top: 40px;">
+                <img class="img2" src="{{ url_for('static', filename='imgs/Ginger.svg') }}" height="120" width="120" alt="">
                 <h2 class="white-text cbold">Explore <br> KentuckyFarmControl</h2>
                 <p class="cusYellow">We're the ones who bit that piece out of Apple</p>
                 <br>
-                <button style="background-color: #FFC703; padding: 5px 5px;" class="btn enbold"><a class="cusGreen" style="text-size-adjust: medium;" href="">Get Started</a></button>
+                <div class="row">
+                    <div class="col s7">
+                        <button style="background-color: #FFC703;" class="btn enbold waves-effect waves-light btn-large"><a class="cusGreen" href="login.html">Get Started</a></button>
+                    </div>
+                    <div class="col s5">
+                        <img class="img2 right" src="{{ url_for('static', filename='imgs/Onion.svg') }}" height="130" width="130" alt="">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col l4 offset-l2 s12">
             <div class="img1">
-                <img src="{{ url_for('static', filename='imgs/img_1.png') }}" height="400px" width="625px" alt="">
+                <img src="{{ url_for('static', filename='imgs/img_1.png') }}" height="430px" width="625px" alt="">
             </div>
         </div>
     </div>
+    <br style="margin-bottom: 50px;">
     <div id="product" class="altbackcol uncontainer">
         <div class="container">
             <br>
@@ -31,10 +38,13 @@
                    <p>Image</p>
                </div>
                <div class="col l5 offset-l2 s12">
-                   <h2>How We Work</h2>
-                   <p>Kentucky Farm Control is a farm management system that allows users to monitor and store their crop yield, livestock, chemicals, and equipment owned and produced by the farm. This places the farmer at an extreme advantage as he can manage his farm and assets, even when he is not in the field, creating an even more productive and efficient farm.</p>
+                   <img class="right r-container" src="{{ url_for('static', filename='imgs/Pear.svg') }}" height="130px" width="125px" alt="Pear">
+                   <br style="margin-bottom: 50px;">
+                   <h1>How We Work</h1>
+                   <h5 class="creg r-container">Kentucky Farm Control is a farm management system that allows users to monitor and store their crop yield, livestock, chemicals, and equipment owned and produced by the farm. This places the farmer at an extreme advantage as he can manage his farm and assets, even when he is not in the field, creating an even more productive and efficient farm.</h5>
                </div>
            </div>
+           <br>
            <br>
         </div>
     </div>

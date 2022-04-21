@@ -67,7 +67,11 @@ migrate = get_migrate(app)
 def index():
     return render_template('layout.html')
 
-@app.route('/singup',methods=['POST'])
+@app.route('/login/')
+def login():
+    return render_template('login.html')
+
+@app.route('/signup',methods=['POST'])
 def signnup():
     userdata = request.get_json() # get userdata
     newuser = User(username=userdata['username'], email=userdata['email']) # create user object
