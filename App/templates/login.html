@@ -5,21 +5,40 @@
 {{ super() }}
 
 {% block content %}
-    <div class="row">
-        <div class="col s7">
-            <br>
-            <br style="margin-top: 30px;">
-            <h4>Welcome to</h4>
-            <h1>KentuckyFarmControl</h1>
-            <br>
+    <div class="row lgc">
+        <div class="col s9 lg-content">
+            <div class="container">
+                <br>
+                <br  class="lg-space">
+                <h4 class="ensbold">Welcome to</h4>
+                <h2 class="enbold" style="line-height: 3px;">KentuckyFarmControl</h2>
+                <br>
+            </div>
         </div>
-        <div class="col s5 sdb bgG">
-            <div class="sdb-head bgY center" style="margin: 0%;">
+        <div class="col s3 bgG">
+            <div class="sdb-head bgY center" style="margin-left: -11px; margin-right: -11px;">
                 <img class="bgY" src="{{ url_for('static', filename='imgs/worm_green_trans.png') }}" height="50px" width="70px" alt="EarthWorm Inc Logo">
             </div>
-            <div class="sdb-body center">
-                <h4>Login</h4>
-                <div></div>
+            <div class="center">
+                <h4 class="cbold">Login</h4>
+                <div class="sdb-form">
+                    <form action="">
+                        <label class="left text-white cbold" for="username">Username</label><br>
+                        <input class="form-box" type="text" name="username" id="username"><br>
+                        <label class="left text-white cbold" for="pass">Password</label><br>
+                        <input type="text" name="pass" id="pass"><br>
+                        <input type="checkbox" name="rm-check" id="rm-check" value="Remember">
+                        <label class="left text-white cbold" for="rm-check">Remember Me</label><br>
+                        <br>
+                        <button style="background-color: #FFC703; border-radius: 5px;" class="btn btn-2xl"><a class="enbold cusGreen" href="">Sign In</a></button>
+                    </form>
+                </div>
+                <div class="">
+                    <br class="sdb-p">
+                    <br>
+                    <br>
+                    <p><a class="cbold cusYellow" href="">Forgot password?</a></p>
+                </div>
             </div>
         </div>
     </div>

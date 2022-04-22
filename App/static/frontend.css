@@ -81,10 +81,35 @@
 /* Login / Signup */
 
 .lr-bg {
-    background-image: url('imgs/bg2.png');
+    background: transparent url('imgs/bg2.png') 0% 0% no-repeat padding-box;
     background-size: cover;
 }
 
-.sdb {
-    
+.sdb-p {
+    margin-top: 201px;
+    margin-bottom: 0px;
+}
+
+.sdb-body {
+    min-height: 100%;
+}
+
+.sdb-form {
+    margin-top: 15vh;
+}
+
+.form-box {
+    border-top: 2px solid #FFF;
+}
+
+.form-label {
+
+}
+
+.lg-space {
+    margin-top: 200px;
+}
+
+.lgc {
+    margin-bottom: -18px;
 }

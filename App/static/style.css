@@ -37,6 +37,11 @@
     src: url(fonts/EncodeSans-Bold.ttf);
 }
 
+@font-face {
+    font-family: EncodeSans-SemiBold;
+    src: url(fonts/EncodeSans-SemiBold.ttf);
+}
+
 .creg {
     font-family: "Chivo-Regular";
 }
@@ -47,4 +52,8 @@
 
 .enbold {
     font-family: "EncodeSans-Bold";
+}
+
+.ensbold {
+    font-family: "EncodeSans-SemiBold";
 }
