@@ -77,3 +77,14 @@
 .footer-r {
     margin-right: -200px;
 }
+
+/* Login / Signup */
+
+.lr-bg {
+    background-image: url('imgs/bg2.png');
+    background-size: cover;
+}
+
+.sdb {
+    
+}

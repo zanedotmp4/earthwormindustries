@@ -12,6 +12,14 @@
     color: #011d19;
 }
 
+.bgY {
+    background-color: #FFC703;
+}
+
+.bgG {
+    background-color: #023831;
+}
+
 /* Fonts */
 
 @font-face {
