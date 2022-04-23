@@ -1,13 +1,12 @@
 import os
-from flask import Flask, render_template
-from flask_login import LoginManager, current_user
+from flask import Flask, render_template, request
+from flask_login import LoginManager, current_user, login_user, login_required
 from flask_uploads import DOCUMENTS, IMAGES, TEXT, UploadSet, configure_uploads
 from flask_jwt import JWT, jwt_required, current_identity
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 from datetime import timedelta
-
 
 from App.database import init_db, get_migrate
 
@@ -60,19 +59,45 @@ def create_app(config={}):
     return app
     
 app = create_app()
+login_manager = LoginManager(app)
+
+@login_manager.user_loader
+def load_user(userid):
+    return User.query.get(userid)
+
 migrate = get_migrate(app)
 
-@app.route('/home')
+@app.route('/')
 def index():
     return render_template('layout.html')
 
 @app.route('/login')
 def login():
+    # form = LoginForm()
     return render_template('login.html')
+
+''' @app.route('/login', methods=['POST'])
+def loginAction():
+    form = Login()
+    if form.validate_on_submit():
+        data = request.form
+        user = User.query.filter_by(username = data['username']).first()
+        if user and user.check_password(data['password']):
+            flash('Logged in successfully!')
+            login_user(user)
+            return redirect(url_for('admin'))
+    flash('Invalid credentials!')
+    return redirect(url_for('login')) '''
 
 @app.route('/admin')
 def admin():
     return render_template('admin.html')
+
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect('login.html')
 
 @app.route('/signup',methods=['POST'])
 def signnup():
