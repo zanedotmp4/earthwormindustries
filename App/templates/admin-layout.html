@@ -3,6 +3,7 @@
   <head>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='frontend.css') }}">
      <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,23 +14,6 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body class="backcol">
-    <nav class="purple">
-      <div class="nav-wrapper navcol">
-        <a href="#!" class="brand-logo center">{% block page %}{% endblock %}</a>
-        <div class="nav-wrapper">
-            <ul id="nav-mobile" class="left navi">
-                <li><a href="/" class="navtext">Home</a></li>
-                <li><a href="#product" class="navtext">Product</a></li>
-                <li><a href="#services" class="navtext">Services</a></li>
-                <li><a href="#pricing" class="navtext">Pricing</a></li>
-            </ul>
-            <ul class="right">
-              <button style="background-color: #023831; border-radius: 5px;" class="nav-btn btn enbold">Sign In</button>
-            </ul>
-        </div>
-      </div>
-    </nav>
-
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     <nav class="white-text" style="padding: 10px">
@@ -44,7 +28,7 @@
     {% endif %}
     {% endwith %}
 
-    <div class="container white-text" id="content">{% block content %}{% endblock %}</div>
+    <div class="white-text" id="content">{% block content %}{% endblock %}</div>
 
     
 
@@ -52,8 +36,8 @@
     <footer class="navcol">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
-            <h3 class="white-text">Footer Content</h3>
+          <div class="col s12 center">
+            <p class="cbold cusGreen uncontainer l-container">&copy; 2022 EarthWorm Inc. All Rights Reserved.</p>
           </div>
         </div>
       </div>

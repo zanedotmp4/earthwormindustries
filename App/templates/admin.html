@@ -1,149 +1,38 @@
-{% extends "layout.html" %}
-{% block title %}KentuckyFarmControl{% endblock %}
+{% extends "admin-layout.html" %}
+{% block title %}Admin | KentuckyFarmControl{% endblock %}
 {% block page %}<img class="z-index-5 nav-img" src="{{ url_for('static', filename='worm_green_trans.png') }}" height="50px" width="70px" alt="EarthWorm Inc. Logo">{% endblock %}
 
 {{ super() }}
 
 {% block content %}
     <div class="row">
-        <div class="col l5 s12">
-            <div class="l-container">
-                <br>
-                <br>
-                <img class="img2" src="{{ url_for('static', filename='img_2.png') }}" height="100" width="100" alt="">
-                <h2 class="white-text cbold">Explore <br> KentuckyFarmControl</h2>
-                <p class="cusYellow">We're the ones who bit that piece out of Apple</p>
-                <br>
-                <button class="btn navcol">Get Started</button>
+        <div class="">
+            <div class="col s3 bgY center">
+                <img class="z-index-5 nav-img" src="{{ url_for('static', filename='imgs/worm_green_trans.png') }}" height="50px" width="70px" alt="EarthWorm Inc. Logo">
+                <ul style="border: 0px;" class="collection">
+                    <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href="">Dashboard</a></li>
+                    <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href="">Inventory</a></li>
+                    <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href=""><span class="badge">Beta</span>Logistics</a></li>
+                    <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href=""><span class="badge">Beta</span>Smart Farm</a></li>
+                    <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href=""><span class="badge">Beta</span>Finances</a></li>
+                    <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href="">Settings</a></li>
+                </ul>
             </div>
-        </div>
-        <div class="col l4 offset-l2 s12">
-            <div class="img1">
-                <img src="{{ url_for('static', filename='img_1.png') }}" height="400px" width="625px" alt="">
+            <div class="col s9">
+                <nav class="purple">
+                    <div class="nav-wrapper navcol">
+                      <a href="#!" class="brand-logo center"></a>
+                      <div class="nav-wrapper">
+                            <ul id="nav-mobile" class="left navi">
+                              
+                            </ul>
+                            <ul class="right">
+                                <img class="circle responsive-img r-container" src="{{ url_for('static', filename='imgs/worm_green_trans.png') }}" height="75" width="75" alt="">
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </div>
-        </div>
-    </div>
-    <div class="altbackcol uncontainer">
-        <div class="container">
-            <br>
-           <div class="row">
-               <div class="col l4 s12">
-                   <p>Image</p>
-               </div>
-               <div class="col l5 offset-l2 s12">
-                   <h2>How We Work</h2>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl.</p>
-               </div>
-           </div>
-           <br>
-        </div>
-    </div>
-    <div class="uncontainer">
-        <div class="container">
-            <br>
-            <br>
-            <div class="row">
-                <div class="col s4">
-                    <div class="center">
-                        <img class="c-circle responsive-img" src="{{ url_for('static', filename='_1.png') }}" alt="chicken" height="120" width="120">
-                        <br>
-                        <h4>LiveStock Tracking</h4>
-                        <p>Track and monitor the population of your livestock as you sell, breed and buy your animals.</p>
-                    </div>
-                </div>
-                <div class="col s4">
-                    <div class="center">
-                        <img class="c-circle responsive-img" src="{{ url_for('static', filename='_2.png') }}" alt="" height="125" width="125">
-                        <br>
-                        <h4>Crop Tracking</h4>
-                        <p>Track and monitor the amount of crops you have as you sell, grow and harvest your crops.</p>
-                    </div>
-                </div>
-                <div class="col s4">
-                    <div class="center">
-                        <img class="c-circle responsive-img" src="{{ url_for('static', filename='_1.png') }}" alt="" height="120" width="120">
-                        <br>
-                        <h4>Smart Irrigation</h4>
-                        <p>Automate and manage the watering of your crops.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s4">
-                    <div class="center">
-                        <img class="c-circle responsive-img" src="{{ url_for('static', filename='_1.png') }}" alt="" height="120" width="120">
-                        <br>
-                        <h4>Chemical Tracking</h4>
-                        <p>Track the use of fertilizers and pesticides on your crops and plantations.</p>
-                    </div>
-                </div>
-                <div class="col s4">
-                    <div class="center">
-                        <img class="c-circle responsive-img" src="{{ url_for('static', filename='_1.png') }}" alt="" height="120" width="120">
-                        <br>
-                        <h4>Equipment Management</h4>
-                        <p>Manage your farm's mechanical equipment and tools inventory.</p>
-                    </div>
-                </div>
-                <div class="col s4">
-                    <div class="center">
-                        <img class="c-circle responsive-img" src="{{ url_for('static', filename='_1.png') }}" alt="" height="120" width="120">
-                        <br>
-                        <h4>Logistics</h4>
-                        <p>Manage your farm's business affairs. Pay your workers, send invoices, get paid, fulfil purchase orders, invoices,  and manage wholesale, retail and market trips.</p>
-                    </div>
-                </div>
-            </div>
-            <br>
-        </div>
-    </div>
-    <div class="altbackcol uncontainer">
-        <div class="container">
-            <br>
-            <div class="row">
-                <div class="col l6 s12">
-                    <h2 class="enbold">Become a part of our community</h2>
-                </div>
-                <div class="col l4 s12">
-                    <br>
-                    <br>
-                    <div class="row">
-                        <div class="col s1">
-                            <div class="center">
-                                <i class="fa-brands fa-facebook fa-2xl"></i>
-                            </div>
-                        </div>
-                        <div class="col s1">
-                            <div class="center">
-                                <i class="fa-brands fa-reddit-alien fa-2xl"></i>
-                            </div>
-                        </div>
-                        <div class="col s2">
-                            <div class="center">
-                                <i class="fa-brands fa-discord"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s2">
-                            <div class="center">
-                                <i class="fa-brands fa-instagram fa-2xl"></i>
-                            </div>
-                        </div>
-                        <div class="col s2">
-                            <div class="center">
-                                <i class="fa-brands fa-youtube fa-2xl"></i>
-                            </div>
-                        </div>
-                        <div class="col s2">
-                            <div class="center">
-                                <i class="fa-brands fa-twitter fa-2xl"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
         </div>
     </div>
 {% endblock %}
