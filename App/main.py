@@ -7,6 +7,7 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 from datetime import timedelta
+from .forms import LoginForm
 
 from App.database import init_db, get_migrate
 
@@ -71,12 +72,12 @@ migrate = get_migrate(app)
 def index():
     return render_template('layout.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET'])
 def login():
-    # form = LoginForm()
-    return render_template('login.html')
+    form = LoginForm()
+    return render_template('login.html', form=form)
 
-''' @app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST'])
 def loginAction():
     form = Login()
     if form.validate_on_submit():
@@ -87,8 +88,7 @@ def loginAction():
             login_user(user)
             return redirect(url_for('admin'))
     flash('Invalid credentials!')
-    return redirect(url_for('login')) '''
-
+    return redirect(url_for('login'))
 @app.route('/admin')
 def admin():
     return render_template('admin.html')

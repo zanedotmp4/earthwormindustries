@@ -23,14 +23,31 @@
                 <h4 class="cbold">Login</h4>
                 <div class="sdb-form">
                     <form class="" method="POST" action="/login">
-                        <label class="left text-white cbold" for="username">Username</label><br>
-                        <input class="form-box" type="text" name="username" id="username"><br>
-                        <label class="left text-white cbold" for="pass">Password</label><br>
-                        <input type="password" name="pass" id="pass"><br>
+
+                        {{ form.csrf_token }}
+
+                        <div class="input-field">
+                            {{ form.username(size=20, class="validate") }}
+                            {{ form.username.label }}
+                        </div> -->
+
+                        <div class="input-field">
+                            {{ form.password(size=20, class="validate") }}
+                            {{ form.password.label }}
+                        </div> -->
+
+                        <div class="input-field">
+                            {{form.submit}}
+                        </div> -->
+
+                        <!-- <label class="left white-white cbold" for="username">Username</label><br>
+                        <input class="form-box white-text" type="text" name="username" id="username"><br>
+                        <label class="left white-text cbold" for="pass">Password</label><br>
+                        <input class="white-text" type="password" name="pass" id="pass"><br>
                         <input type="checkbox" name="rm-check" id="rm-check" value="Remember">
                         <label class="left text-white cbold" for="rm-check">Remember Me</label><br>
                         <br>
-                        <button style="background-color: #FFC703; border-radius: 5px;" class="btn btn-2xl"><a class="enbold cusGreen" href="/login">Sign In</a></button>
+                        <button style="background-color: #FFC703; border-radius: 5px;" class="btn btn-2xl"><a class="enbold cusGreen" href="/login">Sign In</a></button> -->
                     </form>
                 </div>
                 <div class="">
