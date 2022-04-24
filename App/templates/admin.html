@@ -5,44 +5,46 @@
 {{ super() }}
 
 {% block content %}
-    <div class="row">
-        <div class="">
-            <div class="col s2 bgY center">
-                <img class="z-index-5 nav-img" src="{{ url_for('static', filename='imgs/worm_green_trans.png') }}" height="50px" width="70px" alt="EarthWorm Inc. Logo">
-                <ul style="border: 0px;" class="collection">
-                    <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href="">Dashboard</a></li>
-                    <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href="">Inventory</a></li>
-                    <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href=""><span class="badge">Beta</span>Logistics</a></li>
-                    <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href=""><span class="badge">Beta</span>Smart Farm</a></li>
-                    <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href=""><span class="badge">Beta</span>Finances</a></li>
-                    <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href="">Settings</a></li>
-                </ul>
-                <br>
-                <button style="background-color: #023831;" class="btn btn-2xl"><a class="white-text ensbold" href="">LOGOUT</a></button>
-            </div>
-            <div class="col s10">
-                <nav class="black">
-                    <div class="nav-wrapper">
-                      <a href="#!" class="brand-logo center"></a>
-                      <div class="nav-wrapper">
-                            <ul class="right">
-                                <img class="circle responsive-img r-container" src="{{ url_for('static', filename='imgs/worm_green_trans.png') }}" height="50" width="50" alt="">
-                            </ul>
+    {% if current_user.is_authenticated %}
+        <div class="row">
+            <div class="">
+                <div class="col s2 bgY center">
+                    <img class="z-index-5 nav-img" src="{{ url_for('static', filename='imgs/worm_green_trans.png') }}" height="50px" width="70px" alt="EarthWorm Inc. Logo">
+                    <ul style="border: 0px;" class="collection">
+                        <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href="">Dashboard</a></li>
+                        <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href="">Inventory</a></li>
+                        <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href=""><span class="badge">Beta</span>Logistics</a></li>
+                        <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href=""><span class="badge">Beta</span>Smart Farm</a></li>
+                        <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href=""><span class="badge">Beta</span>Finances</a></li>
+                        <li style="background-color: #FFC703;" class="collection-item cbold"><a class="cusGreen" href="">Settings</a></li>
+                    </ul>
+                    <br>
+                    <button style="background-color: #023831;" class="btn btn-2xl"><a class="white-text ensbold" href="{{ url_for('logout') }}">LOGOUT</a></button>
+                </div>
+                <div class="col s10">
+                    <nav class="black">
+                        <div class="nav-wrapper">
+                        <a href="#!" class="brand-logo center"></a>
+                        <div class="nav-wrapper">
+                                <ul class="right">
+                                    <img class="circle responsive-img r-container" src="{{ url_for('static', filename='imgs/worm_green_trans.png') }}" height="50" width="50" alt="">
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
-                <div class="container">
-                    <div class="row">
-                        <div class="l-container">
-                            <button style="background-color: #023831; border: 2px solid #FFF; border-radius: 5px;" class="btn btn-xl"><a class="white-text ensbold" href="">Crops</a></button>
-                            <button style="background-color: #023831; border: 2px solid #FFF; border-radius: 5px;" class="btn btn-xl"><a class="white-text ensbold" href="">Livestock</a></button>
-                            <button style="background-color: #023831; border: 2px solid #FFF; border-radius: 5px;" class="btn btn-xl"><a class="white-text ensbold" href="">Chemicals</a></button>
+                    </nav>
+                    <div class="container">
+                        <div class="row">
+                            <div class="l-container">
+                                <button style="background-color: #023831; border: 2px solid #FFF; border-radius: 5px;" class="btn btn-xl"><a class="white-text ensbold" href="">Crops</a></button>
+                                <button style="background-color: #023831; border: 2px solid #FFF; border-radius: 5px;" class="btn btn-xl"><a class="white-text ensbold" href="">Livestock</a></button>
+                                <button style="background-color: #023831; border: 2px solid #FFF; border-radius: 5px;" class="btn btn-xl"><a class="white-text ensbold" href="">Chemicals</a></button>
+                            </div>
+                            <div class="right"></div>
                         </div>
-                        <div class="right"></div>
+                        <div></div>
                     </div>
-                    <div></div>
                 </div>
             </div>
         </div>
-    </div>
+    {% endif %}
 {% endblock %}

@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request, flash, redirect, url_for
-from flask_login import LoginManager, current_user, login_user, login_required, UserMixin
+from flask_login import LoginManager, current_user, login_user, logout_user, login_required, UserMixin
 from flask_uploads import DOCUMENTS, IMAGES, TEXT, UploadSet, configure_uploads
 from flask_jwt import JWT, jwt_required, current_identity
 from flask_cors import CORS
@@ -92,15 +92,16 @@ def loginAction():
         if user and user.check_password(data['password']):
             flash('Logged in successfully!')
             login_user(user)
-            return redirect(url_for('.admin'))
+            return redirect(url_for('admin'))
     flash('Invalid credentials!')
     return redirect(url_for('login'))
 
-@app.route("/logout")
+@app.route("/logout", methods=['GET'])
 @login_required
 def logout():
     logout_user()
-    return redirect('login.html')
+    flash('Logged out!')
+    return redirect(url_for('.login'))
 
 @app.route('/signup',methods=['POST'])
 def signnup():
