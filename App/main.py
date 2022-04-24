@@ -78,6 +78,11 @@ def login():
     form = LoginForm()
     return render_template('login.html', form=form)
 
+@app.route('/admin')
+@login_required
+def admin():
+    return render_template('admin.html')
+
 @app.route('/login', methods=['POST'])
 def loginAction():
     form = LoginForm()
@@ -87,14 +92,9 @@ def loginAction():
         if user and user.check_password(data['password']):
             flash('Logged in successfully!')
             login_user(user)
-            return redirect(url_for('admin'))
+            return redirect(url_for('.admin'))
     flash('Invalid credentials!')
     return redirect(url_for('login'))
-
-@app.route('/admin')
-@login_required
-def admin():
-    return render_template('admin.html')
 
 @app.route("/logout")
 @login_required
