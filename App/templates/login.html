@@ -27,20 +27,20 @@
                         {{ form.csrf_token }}
 
                         <div class="input-field">
-                            {{ form.username(size=20, class="validate") }}
-                            {{ form.username.label }}
-                        </div> -->
+                            {{ form.username(size=20, class="validate white-text cbold") }}
+                            {{ form.username.label(class="white-text cbold") }}
+                        </div>
 
                         <div class="input-field">
-                            {{ form.password(size=20, class="validate") }}
-                            {{ form.password.label }}
-                        </div> -->
+                            {{ form.password(size=20, class="validate white-text cbold") }}
+                            {{ form.password.label(class="white-text cbold") }}
+                        </div>
 
                         <div class="input-field">
                             {{form.submit}}
-                        </div> -->
+                        </div>
 
-                        <!-- <label class="left white-white cbold" for="username">Username</label><br>
+                        <!-- <label class="left white-text cbold" for="username">Username</label><br>
                         <input class="form-box white-text" type="text" name="username" id="username"><br>
                         <label class="left white-text cbold" for="pass">Password</label><br>
                         <input class="white-text" type="password" name="pass" id="pass"><br>

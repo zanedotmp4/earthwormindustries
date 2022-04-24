@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 from flask_login import LoginManager, current_user, login_user, login_required
 from flask_uploads import DOCUMENTS, IMAGES, TEXT, UploadSet, configure_uploads
 from flask_jwt import JWT, jwt_required, current_identity
@@ -8,6 +8,7 @@ from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 from datetime import timedelta
 from .forms import LoginForm
+from .models.user import *
 
 from App.database import init_db, get_migrate
 
@@ -79,7 +80,7 @@ def login():
 
 @app.route('/login', methods=['POST'])
 def loginAction():
-    form = Login()
+    form = LoginForm()
     if form.validate_on_submit():
         data = request.form
         user = User.query.filter_by(username = data['username']).first()
@@ -89,7 +90,9 @@ def loginAction():
             return redirect(url_for('admin'))
     flash('Invalid credentials!')
     return redirect(url_for('login'))
+
 @app.route('/admin')
+@login_required
 def admin():
     return render_template('admin.html')
 
