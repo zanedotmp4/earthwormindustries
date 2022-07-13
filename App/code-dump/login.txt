@@ -1,0 +1,35 @@
+<div class="sdb-form">
+                    <form class="" method="POST" action="/login">
+
+                        {{ form.csrf_token }}
+
+                        <div class="input-field">
+                            {{ form.username(size=16, class="validate white-text cbold") }}
+                            {{ form.username.label(class="white-text cbold") }}
+                        </div>
+
+                        <div class="input-field">
+                            {{ form.password(size=16, class="validate white-text cbold") }}
+                            {{ form.password.label(class="white-text cbold") }}
+                        </div>
+                        <br>
+                        <div class="input-field">
+                            {{form.submit(style="background-color: #FFC703; border-radius: 5px;", class="btn btn-2xl enbold cusGreen")}}
+                        </div>
+
+                        <!-- <label class="left white-text cbold" for="username">Username</label><br>
+                        <input class="form-box white-text" type="text" name="username" id="username"><br>
+                        <label class="left white-text cbold" for="pass">Password</label><br>
+                        <input class="white-text" type="password" name="pass" id="pass"><br>
+                        <input type="checkbox" name="rm-check" id="rm-check" value="Remember">
+                        <label class="left text-white cbold" for="rm-check">Remember Me</label><br>
+                        <br>
+                        <button style="background-color: #FFC703; border-radius: 5px;" class="btn btn-2xl"><a class="enbold cusGreen" href="/login">Sign In</a></button> -->
+                    </form>
+                </div>
+                <div class="">
+                    <br class="sdb-p">
+                    <br>
+                    <br>
+                    <p><a class="cbold cusYellow" href="">Forgot password?</a></p>
+                </div>

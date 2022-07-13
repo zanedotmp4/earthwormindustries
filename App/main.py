@@ -69,21 +69,16 @@ def load_user(userid):
 
 migrate = get_migrate(app)
 
-@app.route('/')
+# Routes start here
+
+# Main Page. Login
+
+@app.route('/', methods=['GET'])
 def index():
-    return render_template('layout.html')
-
-@app.route('/login', methods=['GET'])
-def login():
     form = LoginForm()
-    return render_template('login.html', form=form)
+    return render_template('index.html')
 
-@app.route('/admin')
-@login_required
-def admin():
-    return render_template('admin.html')
-
-@app.route('/login', methods=['POST'])
+@app.route('/', methods=['POST'])
 def loginAction():
     form = LoginForm()
     if form.validate_on_submit():
@@ -94,7 +89,14 @@ def loginAction():
             login_user(user)
             return redirect(url_for('admin'))
     flash('Invalid credentials!')
-    return redirect(url_for('login'))
+    return redirect(url_for('index'))
+
+# Backend Routes
+
+@app.route('/admin')
+@login_required
+def admin():
+    return render_template('admin.html')
 
 @app.route("/logout", methods=['GET'])
 @login_required
@@ -103,18 +105,15 @@ def logout():
     flash('Logged out!')
     return redirect(url_for('.login'))
 
-@app.route('/signup',methods=['POST'])
-def signnup():
-    userdata = request.get_json() # get userdata
-    newuser = User(username=userdata['username'], email=userdata['email']) # create user object
-    newuser.set_password(userdata['password']) # set password
-    try:
-        db.session.add(newuser)
-        db.session.commit() # save user
-    except IntegrityError: # attempted to insert a duplicate user
-        db.session.rollback()
-        return 'username already exists' # error message
-    return 'user created' # success
+# Backend Activities
+
+# Books
+
+# Customers
+
+# Lenders
+
+# Borrowed
 
 @app.route('/creatething<id>', methods=['POST'])
 @jwt_required()
