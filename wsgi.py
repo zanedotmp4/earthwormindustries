@@ -15,6 +15,7 @@ def initialize():
 @app.cli.command("create-user")
 @click.argument("username")
 @click.argument("password")
+
 def create_user_command(username, password):
     create_user(username, password)
     print(f'{username} created!')

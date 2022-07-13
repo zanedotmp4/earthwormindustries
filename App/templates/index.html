@@ -9,21 +9,22 @@
     <div class="center">
         <br>
         <br>
-        <img src="{{ url_for('static', filename='imgs/solidarity.png') }}" height="50px" width="70px" alt="">
+        <img src="{{ url_for('static', filename='imgs/solidarity.png') }}" height="90px" width="90px" alt="">
         <h1 class="enbold">HelpingHands Book Drive</h1>
     </div>
     <!-- main content -->
     <div class="w3l-form-info">
         <div class="w3_info">
             <h2>Login</h2>
-            <form action="#" method="post">
-                <div class="input-group">
+            <form action="{{ url_for('home') }}" method="POST">
+
+                <div class="form-group input-group">
                     <span><i class="fas fa-user" aria-hidden="true"></i></span>
-                    <input type="email" placeholder="Username or Email" required="">
+                    <input type="text" name="username" placeholder="Username" required="">
                 </div>
                 <div class="input-group">
                     <span><i class="fas fa-key" aria-hidden="true"></i></span>
-                    <input type="Password" placeholder="Password" required="">
+                    <input type="Password" name="password" placeholder="Password" required="">
                 </div>
                 <button class="btn btn-primary btn-block" type="submit">Login</button>
             </form>

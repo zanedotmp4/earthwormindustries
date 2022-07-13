@@ -7,7 +7,6 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 from datetime import timedelta
-from .forms import LoginForm
 from .models.user import *
 
 from App.database import init_db, get_migrate
@@ -73,23 +72,17 @@ migrate = get_migrate(app)
 
 # Main Page. Login
 
-@app.route('/', methods=['GET'])
-def index():
-    form = LoginForm()
-    return render_template('index.html')
-
-@app.route('/', methods=['POST'])
-def loginAction():
-    form = LoginForm()
-    if form.validate_on_submit():
-        data = request.form
-        user = User.query.filter_by(username = data['username']).first()
-        if user and user.check_password(data['password']):
+@app.route('/', methods=["GET", "POST"])
+def home():
+    if request.method == 'POST':
+        user = User.query.filter_by(username = request("username")).first()
+        if user and user.check_password(request("password")):
             flash('Logged in successfully!')
             login_user(user)
             return redirect(url_for('admin'))
-    flash('Invalid credentials!')
-    return redirect(url_for('index'))
+        else:
+            flash('Invalid credentials!')
+            return render_template('index.html')
 
 # Backend Routes
 
@@ -103,49 +96,4 @@ def admin():
 def logout():
     logout_user()
     flash('Logged out!')
-    return redirect(url_for('.login'))
-
-# Backend Activities
-
-# Books
-
-# Customers
-
-# Lenders
-
-# Borrowed
-
-@app.route('/creatething<id>', methods=['POST'])
-@jwt_required()
-def create_todo(id):
-    data = request.get_json()
-    if id == 1:
-      #create livestock
-       newls = create_livestock(data['name'],data['quantity'],data['price'])
-       db.session.add(newls)
-       db.session.commit()
-       return render_template('layout.html')
-    if id == 2:
-        #create crop
-         crop = create_crop(data['name'],data['quantiity'],data['price'])
-         db.session.add(crop)
-         db.session.commit()
-         return render_template('layout.html')
-    if id == 3:
-        #create chemicals
-        new_chem = create_chemical(data['name'],data['quantiity'],data['npk1'],data['npk2'],data['npk3'])
-        db.session.add(new_chem)
-        db.session.commit()
-        return render_template('layout.html')
-
-    
-#id in this case would be if the thing is a livestock, crop or chemcial 
-@app.route('/allthings', methods=['GET'])
-@jwt_required()
-def get_task():
-  tasks = User.query.filter_by(userid=current_identity.id).all()
-  tasks = [User.toDict() for task in tasks]
-  return json.dumps(tasks)
-
-
-# rember to add update and delete for tasks or crops idk what to call it also we gotta have a distintion for plants and crops
+    return redirect(url_for('home'))
