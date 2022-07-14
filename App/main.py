@@ -83,7 +83,6 @@ def home():
 
         user = User.query.filter_by(username = usern).first()
         if user and user.check_password(passw):
-            flash('Logged in successfully!')
             login_user(user)
             return redirect(url_for('admin'))
         else:
