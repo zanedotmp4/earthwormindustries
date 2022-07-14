@@ -75,8 +75,14 @@ migrate = get_migrate(app)
 @app.route('/', methods=["GET", "POST"])
 def home():
     if request.method == 'POST':
-        user = User.query.filter_by(username = request("username")).first()
-        if user and user.check_password(request("password")):
+
+        usern = request.form.get('username')
+        passw = request.form.get('password')
+
+        testp = "bobpass"
+
+        user = User.query.filter_by(username = usern).first()
+        if user and user.check_password(passw):
             flash('Logged in successfully!')
             login_user(user)
             return redirect(url_for('admin'))
@@ -89,7 +95,7 @@ def home():
 @app.route('/admin')
 @login_required
 def admin():
-    return render_template('admin.html')
+    return redirect(url_for('admin'))
 
 @app.route("/logout", methods=['GET'])
 @login_required
